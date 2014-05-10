@@ -30,3 +30,6 @@ Icon
 
 # grunt
 /node_modules
+
+# compass
+/.sass-cache
