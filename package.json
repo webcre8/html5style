@@ -1,0 +1,23 @@
+{
+  "name": "html5style",
+  "version": "0.1.0",
+  "description": "html5style",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/webcre8/html5style.git"
+  },
+  "author": "webcre8",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/webcre8/html5style/issues"
+  },
+  "homepage": "https://github.com/webcre8/html5style",
+  "devDependencies": {
+    "grunt": "^0.4.4",
+    "grunt-includes": "^0.4.4"
+  }
+}
