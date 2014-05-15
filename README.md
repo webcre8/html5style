@@ -52,12 +52,22 @@ $ curl -L git.io/nodebrew | perl - setup
 ```
 
 #### .bashrcを編集する
-最後の行に以下の行を追加する
+```
+$ vim .bashrc
+```
+vi でもいいよ！ 開いたら最後の行にPATHを追加。
 
 ```
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 ```
+.bashrc を再読み込み。
 
+```
+$ source .bashrc
+```
+#### .bash_profileや.zshrcも適宜編集
+環境によっては.bashrcの編集じゃだめな場合もある(@oti)ので、や.bash_profileにもPATHを追加する。
+zsh使ってる人は.zshrcに追記すべし。
 
 ### 2.nodeをインストールする
 コンパイルすると時間かかるしライブラリ足りないとインストールに失敗するのでinstall-binaryを使うとコケずに入りそう
@@ -76,8 +86,12 @@ $ nodebrew use v0.10.25
 プロジェクトフォルダに移動し以下のコマンドでプロジェクトフォルダに必要なパッケージをインストールする
 
 ```
+$ cd ***/***/html5style  ←各人のプロジェクトフォルダへ移動
 $ npm install
 ```
+
+package.json に書かれているgruntプラグインがインストールされる。
+
 
 ### 5.rvmをインストール
 ユーザホームでrvmをインストールします
@@ -86,6 +100,17 @@ $ npm install
 $ cd ~
 $ curl -L https://get.rvm.io | bash -s stable --autolibs=enable
 ```
+
+うまくいかなかったらrvmを再インストールしてみてください。
+
+```
+$ cd ~
+$ rvm seppuku
+$ curl -L https://get.rvm.io | bash -s stable --autolibs=enable
+```
+
+"seppuku" (笑)
+
 
 ### 6.rubyのインストール
 
