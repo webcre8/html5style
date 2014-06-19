@@ -1,139 +1,90 @@
 html5style
 ==========
 
-HTML5のスタイルを作るに当たってテンプレートとなるもの
+Webサイトのスタイルを作るに当たってテンプレートとなるものです。
+
+## 目的
+Webサイトを作るにあたって、設計段階では見落としていたりあるはずなのに思いつかなかった要素のスタイルを確認し、スタイルの制作漏れを防ぐためのドキュメントです。
+
+最終的にはスタイルガイドを作る際のHTMLを生成するサービスになることを目指します。
+
+## モジュールのルール
+モジュールでは、よくあるWebサイトのモジュールを作っていきます。ブランチを切ってモジュールごとにプルリクする形でモジュールを追加していく感じです。
+
+## 現在求めているモジュール
+
+- 見出し(h1〜h6)
+- 段落(p)
+- 水平線(hr)
+- 整形テキスト(pre、code)
+- 引用ブロック(blockquote、cite)
+- 連絡先情報(address)
+- 序列リスト(ol、li)
+- 非序列リスト(ul、li)
+- 対応リスト(dl、dt、dd)
+- 補足コンテンツ(figure、figcaption)
+- フレーズ
+    - 役割の異なるフレーズ(b)
+    - 意味の異なるフレーズ(i)
+    - ハイパーリンク(a)
+    - 語気を強めるフレーズ(em)
+    - 重要性の高いフレーズ(strong)
+    - 注釈(small)
+    - 打ち消し線のフレーズ(s)
+    - 題名のフレーズ(cite)
+    - 引用のフレーズ(q)
+    - 定義のフレーズ(dfn)
+    - 略称のフレーズ(abbr)
+    - 時刻のフレーズ(time)
+    - コードのフレーズ(code)
+    - 変数のフレーズ(var)
+    - 出力結果のフレーズ(samp)
+    - キーボード入力のフレーズ(kbd)
+    - 上付き文字のフレーズ(sup)
+    - 下付き文字のフレーズ(sub)
+    - スペルミスや特殊な扱いのフレーズ(u)
+    - 目印のついたフレーズ(mark)
+    - ルビ付きのフレーズ(ruby、rb、rp、rt、rtc)
+    - 文書方向に関するフレーズ(bdo，bdi)
+- 削除、挿入コンテンツ(ins、del)
+- 埋め込みコンテンツ(embed、object、param)
+- 動画(video、source、track)
+- 音声(audio、source)
+- Canvas(canvas)
+- イメージマップ(map、area)
+- テーブル(table、tr、th、td、thead、tfoot、tbody、caption、col、colgroup)
+- フォーム(form、fieldset、legend、label、input、button、select、optgroup、option、datalist、textarea、keygen、output、progress、meter)
+- サイトロゴ
+- ページャ
+- パンくずリスト
+- ソーシャルボタン
+- カテゴリ、タグ
+- 羅列されたリスト(タグクラウド等)
+- ヘッダー情報ブロック
+- フッター情報ブロック
+- 会話文
+- コメント
+- プロフィール
+- レイアウトカラム
+- カード
+- ツールチップ
+- リストメニュー
+- サムネイル付きブロック
+- ボタン
+- タブメニュー
+- 検索フォーム
+- ログインフォーム
+- 登録フォーム
+- サイトヘッダー
+- サイトフッター
+- etc.
 
 
-***
 
-## nodebrewでGrunt環境構築
+## 意識すること
+- できる限り構造化データ(Microdata/schema.org)とかWAI-ARIAとか盛り込む
+- 複数の構文パターンを用意する
+- モジュール内の構文パターンにはそれぞれ名前を付け、それをクラス名にする
 
-0. nodebrewを入れる前に
-1. nodebrewのインストール
-2. nodeをインストールする
-3. 使うnodeのバージョンに切り替える
-4. gruntを使う
-5. rvmをインストール
-6. rubyのインストール
-7. rubyのライブラリをインストールする
-
-
-### 0.nodebrewを入れる前に
-nodejsが既にインストールされている場合は消そう！
-
-#### 自分でコンパイルした場合
-
-```
-$ curl -o uninstall-node.sh  https://gist.github.com/nicerobot/2697848/raw/uninstall-node.sh
-$ chmod u+x uninstall-node.sh
-$ ./uninstall-node.sh
-$ rm uninstall-node.sh
-$ sudo rm -rf /usr/local/include/node
-$ sudo rm -rf /usr/local/lib/dtrace
-$ rm -rf ~/.node-gyp
-$ rm -rf ~/.npm
-$ rm -rf ~/.sourcemint
-```
-
-#### homebrewで入れた場合
-
-```
-$ brew uninstall node
-```
-
-### 1.nodebrewのインストール
-nodejsはプロジェクトによって利用するバージョンが違うので切り替えられた方が便利ですが、そのままでは簡単に切り替えを行う事ができません。
-そこで nodebrew を使って複数のバージョンのnodejsを使える環境を整えます
-
-#### インストールのコマンドを実行する
-
-```
-$ curl -L git.io/nodebrew | perl - setup
-```
-
-#### .bashrcを編集する
-```
-$ vim .bashrc
-```
-vi でもいいよ！ 開いたら最後の行にPATHを追加。
-
-```
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-```
-.bashrc を再読み込み。
-
-```
-$ source .bashrc
-```
-#### .bash_profileや.zshrcも適宜編集
-環境によっては.bashrcの編集じゃだめな場合もある(@oti)ので、や.bash_profileにもPATHを追加する。
-zsh使ってる人は.zshrcに追記すべし。
-
-### 2.nodeをインストールする
-コンパイルすると時間かかるしライブラリ足りないとインストールに失敗するのでinstall-binaryを使うとコケずに入りそう
-
-```
-$ nodebrew install-binary v0.10.25
-```
-
-### 3.nodeのバージョンを切り替える
-
-```
-$ nodebrew use v0.10.25
-```
-
-### 4.gruntを使う
-プロジェクトフォルダに移動し以下のコマンドでプロジェクトフォルダに必要なパッケージをインストールする
-
-```
-$ cd ***/***/html5style  ←各人のプロジェクトフォルダへ移動
-$ npm install
-```
-
-package.json に書かれているgruntプラグインがインストールされる。
-
-
-### 5.rvmをインストール
-ユーザホームでrvmをインストールします
-
-```
-$ cd ~
-$ curl -L https://get.rvm.io | bash -s stable --autolibs=enable
-```
-
-うまくいかなかったらrvmを再インストールしてみてください。
-
-```
-$ cd ~
-$ rvm seppuku
-$ curl -L https://get.rvm.io | bash -s stable --autolibs=enable
-```
-
-"seppuku" (笑)
-
-
-### 6.rubyのインストール
-
-```
-$ rvm install 2.1.1
-```
-
-### 7.rubyのライブラリをインストールする
-プロジェクトフォルダーに移動してcompassを入れます
-
-```
-$ bundle
-```
-
-### gruntを起動する
-
-```
-$ grunt
-```
-
-以上です
-
-
-### 参考
-* [node.jsのversionを管理するためにnodebrewを利用する - Qiita](http://qiita.com/sinmetal/items/154e81823f386279b33c)
-* [Web制作で面倒な作業を自動化するビルドツール、Grunt v0.4 入門 | Web Design KOJIKA17](http://kojika17.com/2013/03/grunt.js-memo.html)
+## 意識しないこと
+- 現状Web Componentsは意識しない、というかこれがコンポーネントの素材になるかも
