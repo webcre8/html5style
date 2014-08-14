@@ -15,10 +15,10 @@ WEBCRE8jp:html5style glatyou$ <kbd>git branch -a</kbd>
 </samp>
 </pre>
 
-<pre><code>
-    var issue = new Issue(100);
-    var sakai = new Sakai();
-    sakai.push(issue);
-    sakai.review();
-</code></pre>
+<pre>
+<code>function Panel(element, canClose, closeHandler) {
+    this.element = element;
+    this.canClose = canClose;
+    this.closeHandler = function () { if (closeHandler) closeHandler() };
+}</code></pre>
 
