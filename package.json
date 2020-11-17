@@ -1,29 +1,49 @@
 {
   "name": "html5style",
-  "version": "0.1.0",
-  "description": "html5style",
-  "main": "index.html",
+  "version": "0.2.0",
+  "description": "Pure HTML5 Element Catalog",
+  "main": "docs/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prettier-fix": "prettier --write .",
+    "lint-html": "markuplint **/*.html",
+    "lint-css": "stylelint **/*.css",
+    "validate:html": "html-validator --file=index.html --verbose",
+    "test": "npm run prettier-fix && npm run lint-css & npm run lint-html & npm run validate:html"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/webcre8/html5style.git"
   },
   "author": "webcre8",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/webcre8/html5style/issues"
   },
   "homepage": "https://github.com/webcre8/html5style",
   "devDependencies": {
-    "grunt": "^0.4.4",
-    "grunt-includes": "^0.4.4",
-    "grunt-cli": "~0.1.13",
-    "grunt-contrib-connect": "~0.7.1",
-    "grunt-contrib-uglify": "~0.4.0",
-    "grunt-contrib-watch": "~0.6.1",
-    "grunt-contrib-compass": "~0.7.2",
-    "grunt-contrib-cssmin": "~0.9.0"
+    "autoprefixer": "^10.0.2",
+    "commitizen": "^4.2.2",
+    "cz-customizable": "^6.3.0",
+    "html-validator-cli": "^7.0.1",
+    "husky": "^4.3.0",
+    "markuplint": "^1.2.0",
+    "prettier": "^2.1.2",
+    "pretty-quick": "^3.1.0",
+    "stylelint": "^13.7.2",
+    "stylelint-config-recommended": "^3.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./.cz-config.js"
+    }
   }
 }
