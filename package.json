@@ -7,7 +7,7 @@
     "prettier-fix": "prettier --write .",
     "lint-html": "markuplint **/*.html",
     "lint-css": "stylelint **/*.css",
-    "validate:html": "html-validator --file=index.html --verbose",
+    "validate:html": "html-validator --file=docs/index.html --verbose",
     "test": "npm run prettier-fix && npm run lint-css & npm run lint-html & npm run validate:html"
   },
   "repository": {
