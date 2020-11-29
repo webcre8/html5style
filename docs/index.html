@@ -6,312 +6,293 @@
     <link rel="stylesheet" href="./style/style.css" />
   </head>
   <body>
-    <header>
-      <hgroup>
-        <h1>heading 1</h1>
-        <h2>heading 2</h2>
-        <h3>heading 3</h3>
-        <h4>heading 4</h4>
-        <h5>heading 5</h5>
-        <h6>heading 6</h6>
-      </hgroup>
-    </header>
-    <nav>
-      <ol>
-        <li><a href="#grouping">Grouping content</a></li>
-        <li><a href="#textlevel">Text-level semantics</a></li>
-        <li><a href="#embed">Embedded content</a></li>
-        <li><a href="#table">Tabular data</a></li>
-        <li><a href="#forms">Forms</a></li>
-        <li><a href="#interactive">Interactive elements</a></li>
-      </ol>
-    </nav>
-    <article>
-      <header>
-        <h1>heading 1</h1>
-      </header>
-      <section id="grouping">
-        <h1>Grouping content</h1>
-        <div>
-          <p>a paragraph</p>
-          <hr />
-          <pre>\na block of preformatted text        </pre>
-          <blockquote
-            cite="http://www.w3.org/TR/html5/the-blockquote-element.html#the-blockquote-element"
-          >
-            a section that is quoted from another source.
-          </blockquote>
-          <ol>
-            <li>list item</li>
-            <li>list item</li>
-            <li>list item</li>
-          </ol>
-          <ul>
-            <li>list item</li>
-            <li>list item</li>
-            <li>list item</li>
-          </ul>
-          <figure>
-            <dl>
-              <dt>the term</dt>
-              <dd>the description</dd>
-              <dt>the term</dt>
-              <dd>the definition</dd>
-              <dt>name</dt>
-              <dd>value</dd>
-            </dl>
-            <figcaption>
-              an association list consisting of zero or more name-value groups
-              (a description list)
-            </figcaption>
-          </figure>
-          <aside>
-            a section of a page that consists of content that is tangentially
-            related to the content around the aside element, and which could be
-            considered separate from that content.
-          </aside>
-        </div>
-      </section>
-      <section id="textlevel">
-        <h1>Text-level<wbr />semantics</h1>
-        <p>
-          <b class="read"
-            >The following is the usage of the contents of a text level.</b
-          >
-        </p>
-        <ul>
-          <li>
-            <a href="http://example.com/">hyperlink(a hypertext anchor)</a>
-          </li>
-          <li><em>stress emphasis of its contents</em></li>
-          <li><strong>strong importance for its contents</strong></li>
-          <li><small>side comments such as small print</small></li>
-          <li>
-            <s>contents that are no longer accurate or no longer relevant</s>
-          </li>
-          <li><cite>the title of a work</cite></li>
-          <li><q>some phrasing content quoted from another source</q></li>
-          <li>
-            <dfn><abbr title="the defining instance of a term">dfn</abbr></dfn>
-          </li>
-          <li><time>2013-01-06</time></li>
-          <li><code class="language-html">code</code></li>
-          <li><var>x</var></li>
-          <li><samp>output from a program or computing system</samp></li>
-          <li><kbd>Ctrl+z</kbd></li>
-          <li><i class="element">H<sub>2</sub>O</i></li>
-          <li><i class="math">10<sup>2</sup>cm</i></li>
-          <li>
-            <u
-              >a span of text with an unarticulated, though explicitly rendered,
-              non-textual annotation, such as labeling the text as being a
-              proper name in Chinese text (a Chinese proper name mark), or
-              labeling the text as being misspelt</u
-            >
-          </li>
-          <li>
-            <mark
-              >a run of text in one document marked or highlighted for reference
-              purposes, due to its relevance in another context</mark
-            >
-          </li>
-          <!-- <li><ruby>ruby<rt><rp>(</rp>ruby text<rp>)</rp></rt></ruby></li>-->
-          <li><bdo dir="rtl">This paragraph will go right-to-left.</bdo></li>
-          <li>
-            <bdi
-              >a span of text that is to be isolated from its surroundings for
-              the purposes of bidirectional text formatting</bdi
-            >
-          </li>
-          <li><span>a section in a document</span></li>
-        </ul>
-      </section>
-      <p>
-        <del datetime="2012-12-17">a removal from the document</del
-        ><ins datetime="2012-12-17">an addition to the document</ins>.
-      </p>
-      <section id="embed">
-        <h1>Embedded content</h1>
-        <img src="img/img.png" alt="embedded image" /><iframe
-          src="http://example.com/embedded.html"
-        ></iframe
-        ><embed src="flash.swf" /><object data="flash.swf">
-          <param name="quality" value="high" /></object
-        ><video width="320" height="240" controls="">
-          <source src="movie.mp4" type="video/mp4" />
-          <source src="movie.ogg" type="video/ogg" />
-          <track
-            src="subtitle.vtt"
-            kind="subtitles"
-            srclang="en"
-            label="English"
-          />
-          Your browser does not support the video tag.</video
-        ><audio controls="">
-          <source src="audio.ogg" type="audio/ogg" />
-          <source src="audio.mp3" type="audio/mp3" />
-          Your browser does not support the audio tag.
-        </audio>
-        <canvas id="myCanvas"
-          >Your browser does not support the HTML5 canvas tag.</canvas
-        >
-        <script>
-          var c = document.getElementById("myCanvas");
-          var square = c.getContext("2d");
-          square.fillStyle = "#0000ff";
-          square.fillRect(0, 0, 50, 50);
-        </script>
-        <img
-          src="img/map.png"
-          width="200"
-          height="200"
-          alt="map"
-          usemap="#map"
-        /><map name="map"
-          ><area
-            shape="rect"
-            coords="0,0,100,100"
-            href="northwest.html"
-            alt="northwest" /><area
-            shape="rect"
-            coords="100,0,200,100"
-            href="northeast.html"
-            alt="northeast" /><area
-            shape="rect"
-            coords="0,100,100,200"
-            href="southwest.html"
-            alt="southwest" /><area
-            shape="rect"
-            coords="101,101,200,200"
-            href="southeast.html"
-            alt="northwest"
-        /></map>
-      </section>
-      <section id="table">
-        <h1>Tabular data</h1>
-        <table border="1">
-          <caption>
-            Tabular data
-          </caption>
-          <colgroup>
-            <col span="2" />
-            <col />
-          </colgroup>
-          <thead>
-            <tr>
-              <th>header cell</th>
-              <th>header cell</th>
-              <th>header cell</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>data cell</td>
-              <td>data cell</td>
-              <td>data cell</td>
-            </tr>
-            <tr>
-              <td>data cell</td>
-              <td>data cell</td>
-              <td>data cell</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td>data cell</td>
-              <td>data cell</td>
-              <td>data cell</td>
-            </tr>
-          </tfoot>
-        </table>
-      </section>
-      <section id="forms">
-        <h1>Forms</h1>
-        <form method="post" action="form.php">
-          <fieldset>
-            <legend>form</legend>
-            <label for="item01">item01</label
-            ><input id="item01" type="text" /><br /><label for="item02"
-              >item02</label
-            ><input id="item02" type="text" /><br /><button type="button">
-              button</button
-            ><select>
-              <optgroup label="item03-1">
-                <option value="value01">value01</option>
-                <option value="value02">value02</option>
-              </optgroup>
-              <optgroup label="tem03-2">
-                <option value="value03">value03</option>
-                <option value="value04">value04</option>
-              </optgroup></select
-            ><input list="item04" /><datalist id="item04">
-              <option value="value01"></option>
-              <option value="value02"></option>
-              <option value="value03"></option></datalist
-            ><textarea rows="3" cols="40"></textarea><keygen name="key" /><input
-              type="submit"
-              value="Submit key"
-            />
-          </fieldset>
-        </form>
-        <form
-          onsubmit="return false"
-          oninput="o.value = a.valueAsNumber + b.valueAsNumber"
-        >
-          <input name="a" type="number" step="any" /> +<input
-            name="b"
-            type="number"
-            step="any"
-          />
-          =<output name="o"></output>
-        </form>
-        <progress value="50" max="100"></progress
-        ><meter value="5" min="0" max="10">5 out of 10</meter><br /><meter
-          value="0.5"
-        >
-          50%
-        </meter>
-      </section>
-      <section id="interactive">
-        <h1>Interactive elements</h1>
-        <details>
-          <summary>summary</summary>
-          <p>details 01</p>
-          <p>details 02</p>
-        </details>
-        <menu type="toolbar">
-          <li>
-            <menu label="File"
-              ><button type="button" onclick="fnew()">New...</button
-              ><button type="button" onclick="fopen()">Open...</button
-              ><button type="button" onclick="fsave()">Save</button
-              ><button type="button" onclick="fsaveas()">
-                Save as...
-              </button></menu
-            >
-          </li>
-          <li>
-            <menu label="Edit"
-              ><button type="button" onclick="ecopy()">Copy</button
-              ><button type="button" onclick="ecut()">Cut</button
-              ><button type="button" onclick="epaste()">Paste</button></menu
-            >
-          </li>
-          <li>
-            <menu label="Help">
-              <li><a href="help.html">Help</a></li>
-              <li><a href="about.html">About</a></li>
-            </menu>
-          </li>
+    <h1>html5style</h1>
+    <p>
+      HTML要素で body
+      要素内に記述することができる要素の一覧です。このページはHTMLの文法違反をしている可能性があります。
+    </p>
+
+    <h2 id="sections">セクションズ</h2>
+
+    <article>独立した文書を示すarticle</article>
+    <section>文書のセクションを示すsection</section>
+    <nav>ナビゲーションを示すnav</nav>
+    <aside>
+      そのセクションのコンテンツと関連しながらも別のコンテンツを示すaside
+    </aside>
+    <h1>見出しレベル1を示すh1</h1>
+    <h2>見出しレベル2を示すh2</h2>
+    <h3>見出しレベル3を示すh3</h3>
+    <h4>見出しレベル4を示すh4</h4>
+    <h5>見出しレベル5を示すh5</h5>
+    <h6>見出しレベル6を示すh6</h6>
+    <hgroup>
+      <h1>hgroup 内では主見出しを示すh1</h1>
+      <h2>hgroup 内ではサブタイトルを示すh2</h2>
+    </hgroup>
+    <header>ヘッダーを示すheader</header>
+    <footer>フッターを示すfooter</footer>
+    <address>連絡先を示すaddress</address>
+
+    <h2 id="grouping-content">グルーピングコンテンツ</h2>
+    <p>段落を示すp</p>
+    <hr />
+    <pre>プレフォーマッテッド</pre>
+    <blockquote
+      cite="http://www.w3.org/TR/html5/the-blockquote-element.html#the-blockquote-element"
+    >
+      引用ブロックを示すblockquote
+    </blockquote>
+    <ol>
+      <li>オーダードリスト アイテム1</li>
+      <li>オーダードリスト アイテム2</li>
+      <li>オーダードリスト アイテム3</li>
+    </ol>
+    <ul>
+      <li>アンオーダードリスト アイテム1</li>
+      <li>アンオーダードリスト アイテム2</li>
+      <li>アンオーダードリスト アイテム3</li>
+    </ul>
+    <menu>
+      <li>メニュー アイテム1</li>
+      <li>メニュー アイテム2</li>
+      <li>メニュー アイテム3</li>
+    </menu>
+    <dl>
+      <dt>説明リスト 用語</dt>
+      <dd>説明リスト 詳細</dd>
+    </dl>
+    <figure>
+      フィギュア
+      <figcaption>フィグキャプション</figcaption>
+    </figure>
+    <main>本文エリアを示すmain</main>
+    <div>スタイルのためのグルーピングのdiv</div>
+
+    <h2 id="text-lebel-semantics">テキストレベルセマンティクス</h2>
+    <p>
+      この段落はテキストレベルのセマンティクス要素を記述しています。<br />
+      <a href="#">ハイパーリンクを持ったアンカー。</a>
+      <br />
+      <em>強調したいem</em>
+      <br />
+      <strong>重要であるstrong</strong>
+      <br />
+      <small>細目のsmall</small>
+      <br />
+      <s>正確じゃなくなったs</s>
+      <br />
+      <cite>作品タイトルはcite</cite>
+      <br />
+      <q>引用のq</q>
+      <br />
+      用語を示す<dfn>
+        <abbr title="difinition">dfn</abbr>
+      </dfn>
+      <br />
+      <abbr title="abbreviation">abbr</abbr>は略語<br />
+      <ruby
+        >振り仮名を示すruby<rp>(</rp>
+        <rt>ふりがなをしめすルビ</rt>
+        <rp>)</rp>
+      </ruby>
+      <br />
+      <data value="null"
+        >マシンリーダブルな値をヒューマンリーダブルに示すdata</data
+      >
+      <br />
+      日時を示すtime<time>2020-11-17</time>
+      <br />
+      <code>// コードを示すcode</code>
+      <br />
+      変数を示す<var>x</var>
+      <br />
+      実行結果を示す<samp>samp</samp>
+      <br />
+      ユーザーの入力値を示すkbd<kbd>Enter</kbd>
+      <br />
+      下付き文字を示す<sub>sub</sub>
+      <br />
+      上付き文字を示す<sup>sup</sup>
+      <br />
+      異なる文脈の語句を示す<i>i</i>
+      <br />
+      <b>目立たせたいb</b>
+      <br />
+      <u>テキストのスペルミスしている箇所を示すu</u>
+      <br />
+      <mark>参照目的のマークを示すmark</mark>
+      <br />
+      <bdi>双方向アルゴリズムのために隔離されたテキストの範囲を示すbdi</bdi>
+      <br />
+      <bdo dir="rtl">dir属性を使って明示的に文書方向を示せるbdo</bdo>
+      <br />
+      <span>セマンティクスは持たないがスタイルのための範囲を示すspan</span>
+      <br />
+      <wbr />
+    </p>
+
+    <h2 id="edits">編集</h2>
+    <ins>ドキュメントへの追加を示すins</ins>
+    <br />
+    <del>ドキュメントからの削除を示すdel</del>
+
+    <h2 id="embedded-content">埋め込みコンテンツ</h2>
+    <picture>
+      <source srcset="./media/cover.png" media="(min-width: 1280px)" />
+      <img src="./media/banner.png" alt="" />
+    </picture>
+    <br />
+
+    <img src="./media/square.png" alt="img element poster" />
+    <br />
+
+    <video controls>
+      <source src="./media/Neon_21368.mp4" type="video/mp4" />
+    </video>
+    <br />
+
+    <audio controls>
+      <source src="./media/jingle_05.mp3" type="audio/mp3" />
+    </audio>
+    <br />
+
+    <canvas id="myCanvas"> </canvas>
+    <script>
+      var c = document.guerySelector("#myCanvas");
+      var square = c.getContext("2d");
+      square.fillStyle = "#2D3F80";
+      square.fillRect(0, 0, 300, 200);
+    </script>
+
+    <img src="./media/image-map.png" usemap="#ImageMap" />
+    <map name="ImageMap">
+      <area
+        target="_blank"
+        alt="dskd.jp へのリンク"
+        href="https://dskd.jp"
+        coords="230,130,40"
+        shape="circle"
+      />
+      <area
+        target="_blank"
+        alt="webcre8.jp へのリンク"
+        href="https://webcre8.jp"
+        coords="80,30,63,55,32,64,51,90,50,122,80,110,109,121,110,88,128,64,98,56"
+        shape="poly"
+      />
+    </map>
+
+    <h2 id="tabular-data">表形式データ</h2>
+    <table border="1">
+      <caption>
+        表のキャプション
+      </caption>
+      <colgroup>
+        <col span="2" />
+        <col />
+      </colgroup>
+      <thead>
+        <tr>
+          <th scope="col">見出しセル</th>
+          <th scope="col">見出しセル</th>
+          <th scope="col">見出しセル</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>データセル</td>
+          <td>データセル</td>
+          <td>データセル</td>
+        </tr>
+        <tr>
+          <td>データセル</td>
+          <td>データセル</td>
+          <td>データセル</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>データセル</td>
+          <td>データセル</td>
+          <td>データセル</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <h2 id="forms">フォーム</h2>
+    <form>
+      <fieldset>
+        <legend>form</legend>
+        <label for="item01">item01</label>
+        <input id="item01" type="text" />
+        <br />
+        <label for="item02">item02</label>
+        <input id="item02" type="text" />
+        <br />
+        <button type="button">button</button>
+        <select>
+          <optgroup label="item03-1">
+            <option value="value01">value01</option>
+            <option value="value02">value02</option>
+          </optgroup>
+          <optgroup label="tem03-2">
+            <option value="value03">value03</option>
+            <option value="value04">value04</option>
+          </optgroup>
+        </select>
+        <input list="item04" />
+        <datalist id="item04">
+          <option value="value01"></option>
+          <option value="value02"></option>
+          <option value="value03"></option>
+        </datalist>
+        <textarea rows="3" cols="40"> </textarea>
+        <keygen name="key" />
+        <input type="submit" value="Submit key" />
+      </fieldset>
+    </form>
+    <form
+      onsubmit="return false"
+      oninput="o.value = a.valueAsNumber + b.valueAsNumber"
+    >
+      <input name="a" type="number" step="any" /> +
+      <input name="b" type="number" step="any" /> =
+      <output name="o"></output>
+    </form>
+    <progress value="50" max="100"></progress>
+    <meter value="5" min="0" max="10">5 out of 10</meter>
+    <br />
+    <meter value="0.5">50%</meter>
+
+    <h2 id="interactive-elements">インタラクティブコンテンツ</h2>
+    <details>
+      <summary>詳細サマリー</summary>
+      <p>詳細内容</p>
+    </details>
+
+    <menu type="toolbar">
+      <li>
+        <menu label="File">
+          <button type="button">ボタン1</button>
+          <button type="button">ボタン2</button>
         </menu>
-        <menu>
-          <command type="command" label="button"></command>
+      </li>
+      <li>
+        <menu label="Edit">
+          <button type="button">ボタン1</button>
+          <button type="button">ボタン2</button>
         </menu>
-      </section>
-      <footer>
-        <address>mail@author.com</address>
-        <small>Copyrights © WEBCRE8.jp All Rights Reserved.</small>
-      </footer>
-    </article>
+      </li>
+      <li>
+        <menu label="Help">
+          <li><a href="#">Help</a></li>
+          <li><a href="#">About</a></li>
+        </menu>
+      </li>
+    </menu>
+    <menu>
+      <command type="command" label="button"></command>
+    </menu>
   </body>
 </html>
